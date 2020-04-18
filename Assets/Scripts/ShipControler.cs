@@ -13,10 +13,12 @@ public class ShipControler : MonoBehaviour
     [SerializeField] float m_rotationSpeed = 360;
 
     Rigidbody2D m_rigidbody2D = null;
+    Animator m_animator = null;
     
     void Awake()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        m_animator = GetComponent<Animator>();
 
         Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
     }
@@ -65,9 +67,11 @@ public class ShipControler : MonoBehaviour
 
     float UpdateSpeed(float current, float boost)
     {
+        m_animator.SetBool("Boost", boost > 0);
+
         float targetSpeed = boost * m_maxSpeed;
 
-        if(current > targetSpeed)
+        if(current >= targetSpeed)
         {
             float delta = -m_deceleration * Time.deltaTime;
             float maxDelta = targetSpeed - current;

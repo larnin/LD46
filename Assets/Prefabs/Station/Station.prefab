@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b637920939838b14bb6be527b4e24ca2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bef9a7c654caa9848b4fc85c35208cc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 5952441773654939858}
   - component: {fileID: 5952441773654939853}
   - component: {fileID: 5952441773654939852}
+  - component: {fileID: 426312942}
   m_Layer: 9
   m_Name: Station
   m_TagString: Untagged
@@ -222,7 +223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_modulePrefab: {fileID: 9058246788221201999, guid: 23604baea5e00334eafa1602a60b4e7d,
     type: 3}
+  m_connectorPrefab: {fileID: 5604451444980294585, guid: 566ae0a2852237441a8ac73d572996ab,
+    type: 3}
   m_moduleSize: 1
+  m_connectorSize: 1
   m_rotationSpeed: 5
 --- !u!114 &5952441773654939853
 MonoBehaviour:
@@ -262,3 +266,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &426312942
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952441773654939855}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4939506a866ffe34f83c3f34da523c2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

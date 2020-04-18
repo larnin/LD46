@@ -380,6 +380,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 4677436310002416238, guid: 0805c49a01dcb1745909e5935bb52833,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0805c49a01dcb1745909e5935bb52833, type: 3}
 --- !u!1001 &5952441773263363106
