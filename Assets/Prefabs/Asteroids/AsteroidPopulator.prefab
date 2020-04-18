@@ -63,5 +63,5 @@ MonoBehaviour:
   m_maxSpeed: 1
   m_count: 100
   m_size: 100
-  m_minRotSpeed: 1
-  m_maxRotSpeed: 15
+  m_minRotSpeed: 5
+  m_maxRotSpeed: 50
