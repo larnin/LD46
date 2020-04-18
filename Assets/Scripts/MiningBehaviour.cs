@@ -44,6 +44,12 @@ public class MiningBehaviour : MonoBehaviour
                 StartMining(comp);
                 continue;
             }
+
+            if (c.GetComponent<StationInteract>() != null)
+            {
+                OnInteactStation();
+                continue;
+            }
         }
     }
 
@@ -120,6 +126,11 @@ public class MiningBehaviour : MonoBehaviour
     }
 
     void OnResourceMined()
+    {
+
+    }
+
+    void OnInteactStation()
     {
 
     }

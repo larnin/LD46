@@ -18,7 +18,7 @@ public class ShipControler : MonoBehaviour
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
 
-        global::Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
+        Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
     }
     
     void FixedUpdate()
@@ -45,7 +45,7 @@ public class ShipControler : MonoBehaviour
 
         m_rigidbody2D.velocity = speed;
 
-        global::Event<CameraTargetChangeEvent>.Broadcast(new CameraTargetChangeEvent(transform.position.x, transform.position.y));
+        Event<CameraTargetChangeEvent>.Broadcast(new CameraTargetChangeEvent(transform.position.x, transform.position.y));
     }
 
     // angles in [-180;180]
