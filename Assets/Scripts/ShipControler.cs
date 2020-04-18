@@ -19,10 +19,13 @@ public class ShipControler : MonoBehaviour
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+    }
 
+    private void Start()
+    {
         Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
     }
-    
+
     void FixedUpdate()
     {
         var moveDir = m_rigidbody2D.velocity;

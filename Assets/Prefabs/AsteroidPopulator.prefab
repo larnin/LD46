@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7841195157195704962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7841195157195704963}
+  - component: {fileID: 7841195157195704960}
+  m_Layer: 0
+  m_Name: AsteroidPopulator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7841195157195704963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841195157195704962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.2177603, y: 0.41217956, z: 0.046752453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7841195157195704960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7841195157195704962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f5bc3b64f783c4fbe2a0cd99093067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_asteroidData:
+  - prefab: {fileID: 8867998049052205544, guid: bb4670c8bbe9e6f49babd6564dab75a7,
+      type: 3}
+    weight: 2
+    resourcePercent: 0.5
+    resourceNb: 1
+  - prefab: {fileID: 5589366123305273010, guid: 804249d59f872dc44a3098a35845d6a5,
+      type: 3}
+    weight: 2.5
+    resourcePercent: 0.4
+    resourceNb: 2
+  - prefab: {fileID: 8154152887790997208, guid: cae7f868dee5afb4d915addc15ed7a40,
+      type: 3}
+    weight: 1
+    resourcePercent: 0.3
+    resourceNb: 3
+  m_minSpeed: 0.1
+  m_maxSpeed: 1
+  m_count: 100
+  m_size: 100
+  m_minRotSpeed: 1
+  m_maxRotSpeed: 15

@@ -8,7 +8,7 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] float m_maxMiningDistance = 5;
     [SerializeField] float m_mouseMiningRadius = 1;
     [SerializeField] float m_miningDuration = 1;
-    [SerializeField] LayerMask m_miningLayer;
+    [SerializeField] LayerMask m_miningLayer = 0;
     [SerializeField] int m_maxCargo = 5;
 
     int m_cargo = 0;
