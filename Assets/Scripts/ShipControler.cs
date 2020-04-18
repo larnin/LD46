@@ -17,9 +17,11 @@ public class ShipControler : MonoBehaviour
     void Awake()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+
+        global::Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
     }
     
-    void Update()
+    void FixedUpdate()
     {
         var moveDir = m_rigidbody2D.velocity;
         float moveLenght = moveDir.magnitude;
@@ -42,12 +44,13 @@ public class ShipControler : MonoBehaviour
         var speed = new Vector2(Mathf.Cos(newRotation * Mathf.Deg2Rad) * newLenght, Mathf.Sin(newRotation * Mathf.Deg2Rad) * newLenght);
 
         m_rigidbody2D.velocity = speed;
+
+        global::Event<CameraTargetChangeEvent>.Broadcast(new CameraTargetChangeEvent(transform.position.x, transform.position.y));
     }
 
     // angles in [-180;180]
     float UpdateRotation(float current, float target)
     {
-        Debug.Log(current + " " + target);
         float delta = target - current;
         while (Mathf.Abs(delta) > 180)
             delta -= 360 * Mathf.Sign(delta);
