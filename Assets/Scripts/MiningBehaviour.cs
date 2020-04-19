@@ -12,6 +12,7 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] float m_resourceShake = 5;
     [SerializeField] LayerMask m_miningLayer = 0;
     [SerializeField] int m_maxCargo = 5;
+    [SerializeField] GameObject m_stationMenuPrefab;
 
     int m_cargo = 0;
     float m_miningTime = 0;
@@ -22,14 +23,31 @@ public class MiningBehaviour : MonoBehaviour
     SpriteRenderer m_laser = null;
     SpriteRenderer m_laserImpact = null;
 
+    bool m_controleEnabled = true;
+
+    SubscriberList m_subscriberList = new SubscriberList();
+
+    static MiningBehaviour m_instance = null;
+    static public MiningBehaviour instance { get { return m_instance; } }
+
     private void Awake()
     {
+        m_instance = this;
+
+        m_subscriberList.Add(new Event<EnableControlesEvent>.Subscriber(OnControlesEnabled));
+        m_subscriberList.Subscribe();
+
         m_animator = GetComponent<Animator>();
 
         m_laser = transform.Find("Laser").GetComponent<SpriteRenderer>();
         m_laserImpact = transform.Find("LaserImpact").GetComponent<SpriteRenderer>();
 
         UpdateLaser(false);
+    }
+
+    private void OnDestroy()
+    {
+        m_subscriberList.Unsubscribe();
     }
 
     void Update()
@@ -166,7 +184,7 @@ public class MiningBehaviour : MonoBehaviour
 
     void OnInteactStation()
     {
-
+        Instantiate(m_stationMenuPrefab);
     }
 
     void UpdateLaser(bool show)
@@ -197,5 +215,25 @@ public class MiningBehaviour : MonoBehaviour
 
         m_laserImpact.transform.position = new Vector3(target.x, target.y, m_laserImpact.transform.position.z);
         m_laserImpact.transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public int GetCargo()
+    {
+        return m_cargo;
+    }
+
+    public int GetMaxCargo()
+    {
+        return m_maxCargo;
+    }
+
+    public void EmptyCargo()
+    {
+        m_cargo = 0;
+    }
+
+    void OnControlesEnabled(EnableControlesEvent e)
+    {
+        m_controleEnabled = e.enabled;
     }
 }

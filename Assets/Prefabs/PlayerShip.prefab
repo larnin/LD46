@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_treshold: 0.1
-  m_maxSpeed: 5
+  m_maxSpeed: 10
   m_acceleration: 10
   m_deceleration: 7
   m_rotationSpeed: 500
@@ -191,10 +191,14 @@ MonoBehaviour:
   m_maxMiningDistance: 5
   m_mouseMiningRadius: 1
   m_miningDuration: 1
+  m_miningShake: 1
+  m_resourceShake: 5
   m_miningLayer:
     serializedVersion: 2
     m_Bits: 512
   m_maxCargo: 5
+  m_stationMenuPrefab: {fileID: 6226165678162575840, guid: 763a48088101c74439641518bc17ad98,
+    type: 3}
 --- !u!95 &3019681921031751394
 Animator:
   serializedVersion: 3

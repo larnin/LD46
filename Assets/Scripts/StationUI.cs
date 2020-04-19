@@ -56,6 +56,13 @@ public class StationUI : MonoBehaviour
     {
         InitData();
         UpdateInterface();
+
+        Event<EnableControlesEvent>.Broadcast(new EnableControlesEvent(false));
+    }
+
+    private void OnDestroy()
+    {
+        Event<EnableControlesEvent>.Broadcast(new EnableControlesEvent(true));
     }
 
     void Update()

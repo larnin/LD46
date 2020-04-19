@@ -14,16 +14,31 @@ public class ShipControler : MonoBehaviour
 
     Rigidbody2D m_rigidbody2D = null;
     Animator m_animator = null;
+
+    bool m_controleEnabled = true;
+
+    SubscriberList m_subscriberList = new SubscriberList();
+
+    static ShipControler m_instance;
+    public static ShipControler instance { get { return m_instance; }}
     
     void Awake()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+
+        m_subscriberList.Add(new Event<EnableControlesEvent>.Subscriber(OnControlesEnabled));
+        m_subscriberList.Subscribe();
     }
 
     private void Start()
     {
         Event<InstantMoveCameraEvent>.Broadcast(new InstantMoveCameraEvent(transform.position.x, transform.position.y));
+    }
+
+    private void OnDestroy()
+    {
+        m_subscriberList.Unsubscribe();
     }
 
     void FixedUpdate()
@@ -35,6 +50,8 @@ public class ShipControler : MonoBehaviour
             moveAngle = Mathf.Atan2(moveDir.y, moveDir.x) * Mathf.Rad2Deg;
 
         var targetDir = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
+        if (!m_controleEnabled)
+            targetDir = Vector2.zero;
         float targetLenght = targetDir.magnitude;
         if (targetLenght < m_treshold)
             targetLenght = 0;
@@ -92,5 +109,10 @@ public class ShipControler : MonoBehaviour
 
             return current + delta;
         }
+    }
+
+    void OnControlesEnabled(EnableControlesEvent e)
+    {
+        m_controleEnabled = e.enabled;
     }
 }

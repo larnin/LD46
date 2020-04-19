@@ -40,9 +40,6 @@ public class StationBehaviour : MonoBehaviour
 
         m_subscriberList.Add(new Event<UpdateStationModulesEvent>.Subscriber(OnModuleNbChange));
         m_subscriberList.Subscribe();
-
-        
-        Event<UpdateStationModulesEvent>.Broadcast(new UpdateStationModulesEvent(20));
     }
 
     private void OnDestroy()
