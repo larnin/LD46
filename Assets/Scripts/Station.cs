@@ -25,9 +25,9 @@ public class Station : MonoBehaviour
     [SerializeField] int m_power = 0;
     [SerializeField] int m_powerMax = 0;
     [SerializeField] int m_resource = 0;
-    [SerializeField] List<ContiniousEffectData> m_baseContiniousEffects;
+    [SerializeField] List<ContiniousEffectData> m_baseContiniousEffects = new List<ContiniousEffectData>();
 
-    List<ContiniousEffect> m_continousEffects;
+    List<ContiniousEffect> m_continousEffects = new List<ContiniousEffect>();
 
     void Awake()
     {
