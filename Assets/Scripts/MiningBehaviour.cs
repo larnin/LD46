@@ -8,6 +8,8 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] float m_maxMiningDistance = 5;
     [SerializeField] float m_mouseMiningRadius = 1;
     [SerializeField] float m_miningDuration = 1;
+    [SerializeField] float m_miningShake = 1;
+    [SerializeField] float m_resourceShake = 5;
     [SerializeField] LayerMask m_miningLayer = 0;
     [SerializeField] int m_maxCargo = 5;
 
@@ -93,12 +95,17 @@ public class MiningBehaviour : MonoBehaviour
         }
 
         m_miningTime += Time.deltaTime;
+
+        Event<ShakeFrameEvent>.Broadcast(new ShakeFrameEvent(m_miningShake));
+
         if(m_miningTime >= m_miningDuration)
         {
             m_miningTime = 0;
             m_clickedResource.RemoveOneResource();
             m_cargo++;
             OnResourceMined();
+
+            Event<ShakeFrameEvent>.Broadcast(new ShakeFrameEvent(m_resourceShake));
 
             if (m_clickedResource.HaveResource())
             {
