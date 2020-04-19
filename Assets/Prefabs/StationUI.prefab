@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6686556670186038849}
   - component: {fileID: 2911003151228449699}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 2423586697202100780}
   - component: {fileID: 7720928117920181808}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 7736413649659809336}
   - component: {fileID: 7042972968124636749}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 5328117375033516532}
   - component: {fileID: 6819949426985091497}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 6981768589396209443}
   - component: {fileID: 6731931860274268143}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00/00
+  m_text: 00 / 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3b27af080c8ca4489a2970a302b5f08, type: 2}
   m_sharedMaterial: {fileID: -1173691591248459500, guid: c3b27af080c8ca4489a2970a302b5f08,
@@ -1419,9 +1419,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6921810079881327302}
-    characterCount: 5
+    characterCount: 7
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
     lineCount: 1
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00/00
+  m_text: 00 / 00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3b27af080c8ca4489a2970a302b5f08, type: 2}
   m_sharedMaterial: {fileID: -1173691591248459500, guid: c3b27af080c8ca4489a2970a302b5f08,
@@ -2029,9 +2029,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 7880718475378641311}
-    characterCount: 5
+    characterCount: 7
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
     lineCount: 1
@@ -2065,7 +2065,7 @@ GameObject:
   - component: {fileID: 5215210617328291167}
   - component: {fileID: 3640167361715430855}
   m_Layer: 5
-  m_Name: Upgrade 3
+  m_Name: Upgrade3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2863,7 +2863,7 @@ GameObject:
   - component: {fileID: 2659139913392492221}
   - component: {fileID: 8253359857391081543}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gauge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 4851883600665366456}
   - component: {fileID: 9123597549625466881}
   m_Layer: 5
-  m_Name: Upgrade 1
+  m_Name: Upgrade1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6083,6 +6083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea96205345efbe24fa9e30c01585cf3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_activeColor: {r: 1, g: 1, b: 1, a: 1}
+  m_disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &6273616436245164071
 GameObject:
   m_ObjectHideFlags: 0
@@ -7258,7 +7260,7 @@ GameObject:
   - component: {fileID: 5664343717512971230}
   - component: {fileID: 6191773063800766555}
   m_Layer: 5
-  m_Name: Upgrade 4
+  m_Name: Upgrade4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9064,7 +9066,7 @@ GameObject:
   - component: {fileID: 6788416075190752075}
   - component: {fileID: 2582609131374837289}
   m_Layer: 5
-  m_Name: Upgrade 2
+  m_Name: Upgrade2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

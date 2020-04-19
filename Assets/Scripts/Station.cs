@@ -29,6 +29,75 @@ public class Station : MonoBehaviour
 
     List<ContiniousEffect> m_continousEffects = new List<ContiniousEffect>();
 
+    public int lifeSupply
+    {
+        get { return m_lifeSupply; }
+        set
+        {
+            m_lifeSupply = value;
+            if(m_lifeSupply <= 0)
+            {
+                m_lifeSupply = 0;
+                OnDeath();
+            }
+            if (m_lifeSupply > m_lifeSupplyMax)
+                m_lifeSupply = m_lifeSupplyMax;
+        }
+    }
+    public int lifeSupplyMax
+    {
+        get { return m_lifeSupplyMax; }
+        set
+        {
+            m_lifeSupplyMax = value;
+            if (m_lifeSupplyMax < 0)
+                m_lifeSupplyMax = 0;
+            if (m_lifeSupply > m_lifeSupplyMax)
+                m_lifeSupply = m_lifeSupplyMax;
+            if (m_lifeSupply <= 0)
+                OnDeath();
+        }
+    }
+    public int power
+    {
+        get { return m_power; }
+        set
+        {
+            m_power = value;
+            if(m_power <= 0)
+            {
+                m_power = 0;
+                OnDeath();
+            }
+            if (m_power > m_powerMax)
+                m_power = m_powerMax;
+        }
+    }
+    public int powerMax
+    {
+        get { return m_powerMax; }
+        set
+        {
+            m_powerMax = value;
+            if (m_powerMax < 0)
+                m_powerMax = 0;
+            if (m_power > m_powerMax)
+                m_power = m_powerMax;
+            if (m_power <= 0)
+                OnDeath();
+        }
+    }
+    public int resource
+    {
+        get { return m_resource; }
+        set
+        {
+            m_resource = value;
+            if (m_resource < 0)
+                m_resource = 0;
+        }
+    }
+
     void Awake()
     {
         m_instance = this;
@@ -52,16 +121,18 @@ public class Station : MonoBehaviour
 
     void ApplyEffec(ContiniousEffectData data)
     {
+        bool canSuppy = true;
+
         if (m_resource < data.input.resource)
-            return;
+            canSuppy = false;
+        if (m_power < data.input.power)
+            canSuppy = false;
+        if (m_lifeSupply < data.input.lifeSupply)
+            canSuppy = false;
 
         m_lifeSupply -= data.input.lifeSupply;
         m_power -= data.input.power;
         m_resource -= data.input.resource;
-
-        m_lifeSupply += data.output.lifeSupply;
-        m_power += data.output.power;
-        m_resource += data.output.resource;
 
         if (m_lifeSupply < 0)
             m_lifeSupply = 0;
@@ -69,15 +140,21 @@ public class Station : MonoBehaviour
             m_power = 0;
         if (m_resource < 0)
             m_resource = 0;
+
+        if (!canSuppy)
+            return;
+
+        m_lifeSupply += data.output.lifeSupply;
+        m_power += data.output.power;
+        m_resource += data.output.resource;
+
         if (m_lifeSupply > m_lifeSupplyMax)
             m_lifeSupply = m_lifeSupplyMax;
         if (m_power > m_powerMax)
             m_power = m_powerMax;
 
-        if(m_power == 0 || m_lifeSupply == 0)
-        {
-            //todo death
-        }
+        if (m_power == 0 || m_lifeSupply == 0)
+            OnDeath();
     }
 
     public int GetEffectNb()
@@ -104,14 +181,14 @@ public class Station : MonoBehaviour
     {
         if (index >= GetEffectNb())
             return 0;
-        return m_continousEffects[index].timer;
+        return m_continousEffects[index].timer / m_continousEffects[index].effect.maxTimer;
     }
 
     public float GetEffectTimerPercent(string name)
     {
         foreach (var e in m_continousEffects)
             if (e.effect.name == name)
-                return e.timer;
+                return e.timer / e.effect.maxTimer;
         return 0;
     }
 
@@ -147,5 +224,10 @@ public class Station : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void OnDeath()
+    {
+
     }
 }
