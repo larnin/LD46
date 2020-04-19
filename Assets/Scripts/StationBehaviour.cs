@@ -108,7 +108,7 @@ public class StationBehaviour : MonoBehaviour
     {
         outModule = m_baseModulePositions[index % m_baseModulePositions.Count];
 
-        float baseRot = index % m_baseModulePositions.Count == 0 ? 0 : 90;
+        float baseRot = (index % m_baseModulePositions.Count == 0 ? 0 : 90) + transform.rotation.eulerAngles.z;
 
         int indexInBranch = index / 3;
         int connectorIndex = (int)Mathf.Sqrt(indexInBranch);

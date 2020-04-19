@@ -19,11 +19,13 @@ public class ShipControler : MonoBehaviour
 
     SubscriberList m_subscriberList = new SubscriberList();
 
-    static ShipControler m_instance;
+    static ShipControler m_instance = null;
     public static ShipControler instance { get { return m_instance; }}
     
     void Awake()
     {
+        m_instance = this;
+
         m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
 

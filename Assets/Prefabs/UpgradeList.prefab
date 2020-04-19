@@ -1,0 +1,1066 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4303708941336626521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4303708941336626523}
+  - component: {fileID: 4303708941336626522}
+  m_Layer: 0
+  m_Name: UpgradeList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4303708941336626523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303708941336626521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 640, y: 471, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4303708941336626522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303708941336626521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4852737fa06dd344cbc5b4a27bb8f675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_upgrades
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[UpgradeBase, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 11
+    - Name: 
+      Entry: 7
+      Data: 1|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 2|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 3
+    - Name: resource
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 100
+    - Name: m_description
+      Entry: 1
+      Data: 'BIGGER STATION
+
+        MAX [life] / MAX [power] / [effect0name] [effect0full]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 2
+    - Name: m_maxPower
+      Entry: 3
+      Data: 2
+    - Name: m_effects
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Life
+    - Name: input
+      Entry: 7
+      Data: 5|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 6|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 8|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 2
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 200
+    - Name: m_description
+      Entry: 1
+      Data: 'MORE <sprite=0>
+
+        Max [life]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 1
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 11|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 2
+    - Name: resource
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 200
+    - Name: m_description
+      Entry: 1
+      Data: 'MORE <sprite=1>
+
+        MAX[power]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 1
+    - Name: m_effects
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 14|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 200
+    - Name: m_description
+      Entry: 1
+      Data: 'MORE OXYGEN
+
+        [effect0name] [effect0full]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Oxygen
+    - Name: input
+      Entry: 7
+      Data: 17|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 2
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 18|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 20|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 200
+    - Name: m_description
+      Entry: 1
+      Data: 'MORE POWER
+
+        [effect0name] [effect0full]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 22|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Power
+    - Name: input
+      Entry: 7
+      Data: 23|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 24|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 26|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 150
+    - Name: m_description
+      Entry: 1
+      Data: 'CARGO <sprite=2>
+
+        SIZE [cargo]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 29|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 150
+    - Name: m_description
+      Entry: 1
+      Data: 'GO FAST
+
+        SHIP SPEED [speed]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 30|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0.2
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 32|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 150
+    - Name: m_description
+      Entry: 1
+      Data: 'MORE HOLES
+
+        DIG SPEED [mining]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0.2
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 35|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 2
+    - Name: power
+      Entry: 3
+      Data: 2
+    - Name: resource
+      Entry: 3
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 50
+    - Name: m_description
+      Entry: 1
+      Data: 'BIGGER HOLE
+
+        GET [resource] ON DIG'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 36|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 1
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 38|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 2
+    - Name: power
+      Entry: 3
+      Data: 2
+    - Name: resource
+      Entry: 3
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 50
+    - Name: m_description
+      Entry: 1
+      Data: 'OVERCLOCK
+
+        BETTER SHIP / [effect0name] [effect0full]'
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 39|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 40|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Overclock
+    - Name: input
+      Entry: 7
+      Data: 41|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 42|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0.2
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0.2
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 1
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|UpgradeStats, Assembly-CSharp
+    - Name: m_cost
+      Entry: 7
+      Data: 44|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 3
+    - Name: power
+      Entry: 3
+      Data: 1
+    - Name: resource
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_weight
+      Entry: 4
+      Data: 50
+    - Name: m_description
+      Entry: 1
+      Data: "EFFICIENCY\n LESS <sprite=0> LOSS /[effect3name] [effect3full]"
+    - Name: m_maxLifeSupply
+      Entry: 3
+      Data: 0
+    - Name: m_maxPower
+      Entry: 3
+      Data: 0
+    - Name: m_effects
+      Entry: 7
+      Data: 45|System.Collections.Generic.List`1[[ContiniousEffectData, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 46|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Life
+    - Name: input
+      Entry: 7
+      Data: 47|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 48|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: -0.3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 49|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Oxygen
+    - Name: input
+      Entry: 7
+      Data: 50|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 51|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Power
+    - Name: input
+      Entry: 7
+      Data: 53|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 54|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 55|ContiniousEffectData, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Efficiency
+    - Name: input
+      Entry: 7
+      Data: 56|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 1
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 57|ResourceBloc, Assembly-CSharp
+    - Name: lifeSupply
+      Entry: 3
+      Data: 0
+    - Name: power
+      Entry: 3
+      Data: 0
+    - Name: resource
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: maxTimer
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_shipSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningSpeed
+      Entry: 4
+      Data: 0
+    - Name: m_shipMiningResource
+      Entry: 3
+      Data: 0
+    - Name: m_shipCargo
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  m_upgradeNb: 4
+  m_regenCost: 5
+  m_increaseCost: 0.2
+  m_moreCost: 0.2
+  m_weightMultiplier: 0.8

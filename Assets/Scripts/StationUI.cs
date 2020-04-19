@@ -89,12 +89,37 @@ public class StationUI : MonoBehaviour
 
     public void BuyUpgrade(int index)
     {
+        var upgrades = UpgradeList.instance;
+        var station = Station.instance;
+        if (station == null || upgrades == null)
+            return;
 
+        var upgrade = upgrades.GetUpgrade(index);
+        if (upgrade == null)
+            return;
+
+        if (!upgrade.CanBuy())
+            return;
+
+        upgrades.UseUpgrade(upgrade);
+        upgrades.GenerateUpgrades();
+
+        UpdateInterface();
     }
 
     public void BuyReroll()
     {
+        var upgrades = UpgradeList.instance;
+        var station = Station.instance;
+        if (station == null || upgrades == null)
+            return;
 
+        if (station.resource < upgrades.GetRegenCost())
+            return;
+
+        upgrades.UseRegen();
+
+        UpdateInterface();
     }
 
     void InitData()
@@ -188,10 +213,28 @@ public class StationUI : MonoBehaviour
             m_continiousEffects[i].effect.text = effect.GenerateText();
             
         }
+
+        //upgrades
+        var upgrades = UpgradeList.instance;
+
+        for(int i = 0; i < m_upgrades.Count; i++)
+        {
+            var upgrade = upgrades.GetUpgrade(i);
+            m_upgrades[i].obj.SetActive(upgrade != null);
+            if (upgrade == null)
+                continue;
+
+            m_upgrades[i].description.text = upgrade.GetDescription();
+            m_upgrades[i].cost.text = upgrade.GetFullPrice().GenerateText();
+        }
+
+        //reroll
+        m_reroll.label.text = "REROLL FOR " + upgrades.GetRegenCost() + Defs.resourceText;
     }
 
     void UpdateGauges()
     {
+        //gauges
         var station = Station.instance;
 
         float life = (float)station.lifeSupply / station.lifeSupplyMax;
@@ -208,6 +251,7 @@ public class StationUI : MonoBehaviour
 
         m_resources.text = station.resource.ToString();
 
+        //continious effects
         for (int i = 0; i < m_continiousEffects.Count; i++)
         {
             var effect = station.GetEffect(i);
@@ -216,5 +260,27 @@ public class StationUI : MonoBehaviour
 
             m_continiousEffects[i].gauge.fillAmount = station.GetEffectTimerPercent(i);
         }
+
+        //upgrades
+        var upgrades = UpgradeList.instance;
+
+        for (int i = 0; i < m_upgrades.Count; i++)
+        {
+            var upgrade = upgrades.GetUpgrade(i);
+            if (upgrade == null)
+                continue;
+
+            bool canBuy = upgrade.CanBuy();
+            var color = canBuy ? m_activeColor : m_disabledColor;
+
+            m_upgrades[i].description.color = color;
+            m_upgrades[i].cost.color = color;
+            m_upgrades[i].button.interactable = canBuy;
+        }
+
+        //reroll
+        bool canReroll = upgrades.GetRegenCost() < station.resource;
+        m_reroll.label.color = canReroll ? m_activeColor : m_disabledColor;
+        m_reroll.button.interactable = canReroll;
     }
 }

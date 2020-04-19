@@ -12,7 +12,7 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] float m_resourceShake = 5;
     [SerializeField] LayerMask m_miningLayer = 0;
     [SerializeField] int m_maxCargo = 5;
-    [SerializeField] GameObject m_stationMenuPrefab;
+    [SerializeField] GameObject m_stationMenuPrefab = null;
 
     int m_cargo = 0;
     float m_miningTime = 0;
@@ -62,6 +62,9 @@ public class MiningBehaviour : MonoBehaviour
 
     void OnMouseClick()
     {
+        if (!m_controleEnabled)
+            return;
+
         var clicPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float dist = (new Vector2(clicPos.x, clicPos.y) - new Vector2(transform.position.x, transform.position.y)).magnitude;
 
@@ -235,5 +238,6 @@ public class MiningBehaviour : MonoBehaviour
     void OnControlesEnabled(EnableControlesEvent e)
     {
         m_controleEnabled = e.enabled;
+        OnMouseRelease();
     }
 }

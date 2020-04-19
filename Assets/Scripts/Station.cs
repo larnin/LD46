@@ -25,6 +25,7 @@ public class Station : MonoBehaviour
     [SerializeField] int m_power = 0;
     [SerializeField] int m_powerMax = 0;
     [SerializeField] int m_resource = 0;
+    [SerializeField] float m_baseEffectDuration = 5;
     [SerializeField] List<ContiniousEffectData> m_baseContiniousEffects = new List<ContiniousEffectData>();
 
     List<ContiniousEffect> m_continousEffects = new List<ContiniousEffect>();
@@ -198,12 +199,22 @@ public class Station : MonoBehaviour
         {
             if (effect.effect.name == e.name)
             {
-                effect.effect = e;
+                effect.effect.input.lifeSupply += e.input.lifeSupply;
+                effect.effect.input.power += e.input.power;
+                effect.effect.input.resource += e.input.resource;
+
+                effect.effect.output.lifeSupply += e.output.lifeSupply;
+                effect.effect.output.power += e.output.power;
+                effect.effect.output.resource += e.output.resource;
+
                 return;
             }
         }
 
-        m_continousEffects.Add(new ContiniousEffect(e));
+        var newEffect = new ContiniousEffect(e);
+        newEffect.timer = m_baseEffectDuration;
+
+        m_continousEffects.Add(newEffect);
     }
     
     public void RemoveEffect(int index)
