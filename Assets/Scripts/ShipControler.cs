@@ -117,4 +117,14 @@ public class ShipControler : MonoBehaviour
     {
         m_controleEnabled = e.enabled;
     }
+
+    public void IncreaseSpeed(float percent)
+    {
+        percent += 1;
+
+        m_maxSpeed *= percent;
+        m_acceleration *= percent;
+        m_deceleration *= percent;
+        m_rotationSpeed *= percent;
+    }
 }

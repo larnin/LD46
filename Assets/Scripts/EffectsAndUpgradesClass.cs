@@ -38,9 +38,9 @@ public class ResourceBloc
 [Serializable]
 public class ContiniousEffectData
 {
-    public string name;
-    public ResourceBloc input;
-    public ResourceBloc output;
+    public string name = "";
+    public ResourceBloc input = new ResourceBloc();
+    public ResourceBloc output = new ResourceBloc();
     public float maxTimer;
 
     public string GenerateText()
@@ -263,6 +263,23 @@ public class UpgradeStats : UpgradeBase
 
     public override void ApplyEffect()
     {
+        var station = Station.instance;
 
+        if (m_maxLifeSupply != 0)
+            station.lifeSupplyMax += m_maxLifeSupply;
+        if (m_maxPower != 0)
+            station.powerMax += m_maxPower;
+
+        foreach (var e in m_effects)
+            station.AddEffect(e);
+
+        if(m_shipSpeed != 0)
+            ShipControler.instance.IncreaseSpeed(m_shipSpeed);
+        if (m_shipMiningSpeed != 0)
+            MiningBehaviour.instance.IncreaseMiningSpeed(m_shipMiningSpeed);
+        if (m_shipMiningResource != 0)
+            MiningBehaviour.instance.IncreaseMiningResource(m_shipMiningResource);
+        if (m_shipCargo != 0)
+            MiningBehaviour.instance.IncreaseCargo(m_shipCargo);
     }
 }

@@ -12,7 +12,18 @@ public class Station : MonoBehaviour
 
         public ContiniousEffect(ContiniousEffectData _effect, float _timer = 0)
         {
-            effect = _effect;
+            effect = new ContiniousEffectData();
+
+            effect.name = _effect.name;
+            effect.maxTimer = _effect.maxTimer;
+
+            effect.input.lifeSupply = _effect.input.lifeSupply;
+            effect.input.power = _effect.input.power;
+            effect.input.resource = _effect.input.resource;
+
+            effect.output.lifeSupply += _effect.output.lifeSupply;
+            effect.output.power += _effect.output.power;
+            effect.output.resource += _effect.output.resource;
             timer = _timer;
         }
     }
@@ -212,7 +223,7 @@ public class Station : MonoBehaviour
         }
 
         var newEffect = new ContiniousEffect(e);
-        newEffect.timer = m_baseEffectDuration;
+        newEffect.effect.maxTimer = m_baseEffectDuration;
 
         m_continousEffects.Add(newEffect);
     }

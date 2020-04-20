@@ -103,7 +103,7 @@ MonoBehaviour:
       Data: 4|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Life
+      Data: LIFE
     - Name: input
       Entry: 7
       Data: 5|ResourceBloc, Assembly-CSharp
@@ -325,7 +325,7 @@ MonoBehaviour:
       Data: 16|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Oxygen
+      Data: OXYGEN
     - Name: input
       Entry: 7
       Data: 17|ResourceBloc, Assembly-CSharp
@@ -427,7 +427,7 @@ MonoBehaviour:
       Data: 22|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Power
+      Data: POWER
     - Name: input
       Entry: 7
       Data: 23|ResourceBloc, Assembly-CSharp
@@ -769,7 +769,7 @@ MonoBehaviour:
       Data: 40|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Overclock
+      Data: OVERCLOCK
     - Name: input
       Entry: 7
       Data: 41|ResourceBloc, Assembly-CSharp
@@ -869,7 +869,7 @@ MonoBehaviour:
       Data: 46|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Life
+      Data: LIFE
     - Name: input
       Entry: 7
       Data: 47|ResourceBloc, Assembly-CSharp
@@ -911,7 +911,7 @@ MonoBehaviour:
       Data: 49|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Oxygen
+      Data: OXYGEN
     - Name: input
       Entry: 7
       Data: 50|ResourceBloc, Assembly-CSharp
@@ -953,7 +953,7 @@ MonoBehaviour:
       Data: 52|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Power
+      Data: POWER
     - Name: input
       Entry: 7
       Data: 53|ResourceBloc, Assembly-CSharp
@@ -995,7 +995,7 @@ MonoBehaviour:
       Data: 55|ContiniousEffectData, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Efficiency
+      Data: EFFICIENCY
     - Name: input
       Entry: 7
       Data: 56|ResourceBloc, Assembly-CSharp

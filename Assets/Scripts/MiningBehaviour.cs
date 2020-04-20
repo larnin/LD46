@@ -16,6 +16,7 @@ public class MiningBehaviour : MonoBehaviour
 
     int m_cargo = 0;
     float m_miningTime = 0;
+    int m_miningValue = 1;
     ResourceItem m_clickedResource = null;
 
     Animator m_animator = null;
@@ -88,7 +89,7 @@ public class MiningBehaviour : MonoBehaviour
             if (c.GetComponent<StationInteract>() != null)
             {
                 OnInteactStation();
-                continue;
+                break;
             }
         }
     }
@@ -123,7 +124,9 @@ public class MiningBehaviour : MonoBehaviour
         {
             m_miningTime = 0;
             m_clickedResource.RemoveOneResource();
-            m_cargo++;
+            m_cargo += m_miningValue;
+            if (m_cargo > m_maxCargo)
+                m_cargo = m_maxCargo;
             OnResourceMined();
 
             Event<ShakeFrameEvent>.Broadcast(new ShakeFrameEvent(m_resourceShake));
@@ -188,6 +191,9 @@ public class MiningBehaviour : MonoBehaviour
     void OnInteactStation()
     {
         Instantiate(m_stationMenuPrefab);
+
+        Station.instance.resource += m_cargo;
+        m_cargo = 0;
     }
 
     void UpdateLaser(bool show)
@@ -230,14 +236,24 @@ public class MiningBehaviour : MonoBehaviour
         return m_maxCargo;
     }
 
-    public void EmptyCargo()
-    {
-        m_cargo = 0;
-    }
-
     void OnControlesEnabled(EnableControlesEvent e)
     {
         m_controleEnabled = e.enabled;
         OnMouseRelease();
+    }
+
+    public void IncreaseMiningSpeed(float value)
+    {
+        m_miningDuration *= (1 - value);
+    }
+
+    public void IncreaseMiningResource(int value)
+    {
+        m_miningValue += value;
+    }
+
+    public void IncreaseCargo(int value)
+    {
+        m_maxCargo = value;
     }
 }
