@@ -12,9 +12,11 @@ public class DistanceChecker : MonoBehaviour
     [SerializeField] float m_maxBorderDistance = 96;
     [SerializeField] float m_minCenterDistance = 94;
     [SerializeField] float m_shakePower = 5;
+    [SerializeField] float m_warningPulseTime = 2;
 
     List<Image> m_borderImages = new List<Image>();
     Image m_centerImage = null;
+    Image m_waringImage = null;
 
     SubscriberList m_subscriberList = new SubscriberList();
 
@@ -32,6 +34,8 @@ public class DistanceChecker : MonoBehaviour
                 m_borderImages.Add(img);
             else if (obj.name.Contains("Center"))
                 m_centerImage = img;
+            else if (obj.name.Contains("Danger"))
+                m_waringImage = img;
         }
 
         m_subscriberList.Add(new Event<CameraTargetChangeEvent>.Subscriber(OnTargetChange));
@@ -87,6 +91,17 @@ public class DistanceChecker : MonoBehaviour
         var centerColor = m_centerImage.color;
         centerColor.a = centerNorm * m_maxCenterPower;
         m_centerImage.color = centerColor;
+
+        var warningColor = m_waringImage.color;
+        if (distanceNorm > 0)
+        {
+            float cycle = Time.time / m_warningPulseTime;
+            if (cycle - Mathf.Floor(cycle) < 0.5f)
+                warningColor.a = 1;
+            else warningColor.a = 0;
+        }
+        else warningColor.a = 0;
+        m_waringImage.color = warningColor;
     }
 
     void OnTargetChange(CameraTargetChangeEvent e)
