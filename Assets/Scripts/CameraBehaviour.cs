@@ -52,6 +52,8 @@ public class CameraBehaviour : MonoBehaviour
         pos.y += dir.y;
 
         transform.position = pos;
+
+        Event<CameraMovedEvent>.Broadcast(new CameraMovedEvent(pos.x, pos.y));
     }
 
     void OnTargetMove(CameraTargetChangeEvent e)
