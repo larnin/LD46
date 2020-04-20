@@ -222,8 +222,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c472381b693d68b40b2962065da9a1a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_modulePrefab: {fileID: 9058246788221201999, guid: 23604baea5e00334eafa1602a60b4e7d,
-    type: 3}
+  m_modulePrefab:
+  - {fileID: 9058246788221201999, guid: 23604baea5e00334eafa1602a60b4e7d, type: 3}
+  - {fileID: 9058246788221201999, guid: ce030df2ba3837a4b8284ff53f8f1ca8, type: 3}
+  - {fileID: 9058246788221201999, guid: fad4fafecdfea9f4d938281758f260df, type: 3}
+  - {fileID: 9058246788221201999, guid: 8ca6fb494d661f0428bda24425ec64bf, type: 3}
+  - {fileID: 9058246788221201999, guid: c759c488fc329ea449c914bd92d2154a, type: 3}
+  - {fileID: 9058246788221201999, guid: 7a6439fb888a1b64ab3ee404bf8868de, type: 3}
+  - {fileID: 9058246788221201999, guid: 97aed1cdd08d49c4ea9dabff0756ff89, type: 3}
+  - {fileID: 9058246788221201999, guid: 486b916f267b5984fad8745a59090f0a, type: 3}
+  - {fileID: 9058246788221201999, guid: 273d7ea4fdade8e48b03d73cf5f9186f, type: 3}
   m_connectorPrefab: {fileID: 5604451444980294585, guid: 566ae0a2852237441a8ac73d572996ab,
     type: 3}
   m_moduleSize: 1

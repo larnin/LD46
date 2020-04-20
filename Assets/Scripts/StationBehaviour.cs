@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using NRand;
 
 public class StationBehaviour : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class StationBehaviour : MonoBehaviour
         }
     }
 
-    [SerializeField] GameObject m_modulePrefab = null;
+    [SerializeField] List<GameObject> m_modulePrefab = new List<GameObject>();
     [SerializeField] GameObject m_connectorPrefab = null;
     [SerializeField] float m_moduleSize = 1;
     [SerializeField] float m_connectorSize = 1;
@@ -94,8 +95,10 @@ public class StationBehaviour : MonoBehaviour
 
             m_connectors.Add(new ConnectorData(connector, m_modules.Count));
         }
+
+        var index = new UniformIntDistribution(0, m_modulePrefab.Count).Next(new StaticRandomGenerator<DefaultRandomGenerator>());
         
-        var obj = Instantiate(m_modulePrefab);
+        var obj = Instantiate(m_modulePrefab[index]);
         obj.transform.parent = parent.transform;
         obj.transform.rotation = Quaternion.Euler(0, 0, rot);
         obj.transform.localPosition = new Vector3(pos.x, pos.y, 0);
