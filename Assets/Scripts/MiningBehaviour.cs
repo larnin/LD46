@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class MiningBehaviour : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] LayerMask m_miningLayer = 0;
     [SerializeField] int m_maxCargo = 5;
     [SerializeField] GameObject m_stationMenuPrefab = null;
+    [SerializeField] GameObject m_textPrefab = null;
 
     int m_cargo = 0;
     float m_miningTime = 0;
@@ -156,14 +158,17 @@ public class MiningBehaviour : MonoBehaviour
 
     void StartMining(ResourceItem asteroid)
     {
-        if (m_cargo >= m_maxCargo)
-            OnCargoFull();
-
         if (m_clickedResource != null)
             return;
 
         if (!asteroid.HaveResource())
             return;
+
+        if (m_cargo >= m_maxCargo)
+        {
+            OnCargoFull();
+            return;
+        }
 
         m_animator.SetBool("Laser", true);
 
@@ -175,17 +180,38 @@ public class MiningBehaviour : MonoBehaviour
 
     void OnCargoFull()
     {
-
+        var obj = Instantiate(m_textPrefab);
+        obj.transform.position = transform.position;
+        var text = obj.GetComponentInChildren<TextMeshPro>();
+        if (text != null)
+        {
+            text.color = new Color(120, 0, 0);
+            text.text = "FULL CARGO";
+        }
     }
 
     void OnClickTooFar()
     {
-
+        var obj = Instantiate(m_textPrefab);
+        obj.transform.position = transform.position;
+        var text = obj.GetComponentInChildren<TextMeshPro>();
+        if (text != null)
+        {
+            text.color = new Color(120, 0, 0);
+            text.text = "TOO FAR";
+        }
     }
 
     void OnResourceMined()
     {
-
+        var obj = Instantiate(m_textPrefab);
+        obj.transform.position = transform.position;
+        var text = obj.GetComponentInChildren<TextMeshPro>();
+        if(text != null)
+        {
+            text.color = Color.white;
+            text.text = "+" + m_miningValue + Defs.resourceText;
+        }
     }
 
     void OnInteactStation()

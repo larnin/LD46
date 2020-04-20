@@ -199,6 +199,8 @@ MonoBehaviour:
   m_maxCargo: 5
   m_stationMenuPrefab: {fileID: 6226165678162575840, guid: 763a48088101c74439641518bc17ad98,
     type: 3}
+  m_textPrefab: {fileID: 723252886541640296, guid: 643da8d9ae81fdf44a34143b98212ffe,
+    type: 3}
 --- !u!95 &3019681921031751394
 Animator:
   serializedVersion: 3
