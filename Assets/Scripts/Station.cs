@@ -250,6 +250,10 @@ public class Station : MonoBehaviour
 
     void OnDeath()
     {
-
+        Event<EnableControlesEvent>.Broadcast(new EnableControlesEvent(false));
+        if(m_lifeSupply == 0)
+            GameOverUI.OnDeath("THE STATION RAN OUT OF LIFE SUPPLY " + Defs.lifeSuplyText);
+        else //power
+            GameOverUI.OnDeath("THE STATION RAN OUT OF POWER " + Defs.lifeSuplyText);
     }
 }

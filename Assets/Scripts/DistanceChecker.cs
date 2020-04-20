@@ -60,7 +60,8 @@ public class DistanceChecker : MonoBehaviour
 
         if(distanceNorm > 1)
         {
-            //todo death
+            Event<EnableControlesEvent>.Broadcast(new EnableControlesEvent(false));
+            GameOverUI.OnDeath("YOU HAVE LOST THE CONTACT WITH THE STATION");
             distanceNorm = 1;
         }
 
