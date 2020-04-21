@@ -256,6 +256,6 @@ public class Station : MonoBehaviour
         if(m_lifeSupply == 0)
             GameOverUI.OnDeath("THE STATION RAN OUT OF LIFE SUPPLY " + Defs.lifeSuplyText);
         else //power
-            GameOverUI.OnDeath("THE STATION RAN OUT OF POWER " + Defs.lifeSuplyText);
+            GameOverUI.OnDeath("THE STATION RAN OUT OF POWER " + Defs.powerText);
     }
 }
