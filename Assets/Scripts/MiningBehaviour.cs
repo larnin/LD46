@@ -280,6 +280,6 @@ public class MiningBehaviour : MonoBehaviour
 
     public void IncreaseCargo(int value)
     {
-        m_maxCargo = value;
+        m_maxCargo += value;
     }
 }

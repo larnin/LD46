@@ -212,7 +212,7 @@ public class UpgradeStats : UpgradeBase
             {
                 substr = substr.Remove(0, 6);
                 int effectIndex = -1;
-                int.TryParse(substr, out effectIndex);
+                effectIndex = substr[0] - '0';
                 if (effectIndex >= 0 && effectIndex < m_effects.Count)
                 {
                     substr = substr.Remove(0, 1);

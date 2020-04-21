@@ -4945,7 +4945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxMiningDistance: 5
   m_mouseMiningRadius: 1
-  m_miningDuration: 1
+  m_miningDuration: 1.5
   m_miningShake: 1
   m_resourceShake: 5
   m_miningLayer:

@@ -47,21 +47,21 @@ MonoBehaviour:
   - prefab: {fileID: 8867998049052205544, guid: bb4670c8bbe9e6f49babd6564dab75a7,
       type: 3}
     weight: 2
-    resourcePercent: 0.5
-    resourceNb: 1
+    resourcePercent: 0.7
+    resourceNb: 2
   - prefab: {fileID: 5589366123305273010, guid: 804249d59f872dc44a3098a35845d6a5,
       type: 3}
     weight: 2.5
-    resourcePercent: 0.4
-    resourceNb: 2
+    resourcePercent: 0.6
+    resourceNb: 3
   - prefab: {fileID: 8154152887790997208, guid: cae7f868dee5afb4d915addc15ed7a40,
       type: 3}
     weight: 1
-    resourcePercent: 0.3
-    resourceNb: 3
-  m_minSpeed: 0.1
-  m_maxSpeed: 1
+    resourcePercent: 0.4
+    resourceNb: 4
+  m_minSpeed: 0.3
+  m_maxSpeed: 2.5
   m_count: 100
-  m_size: 100
+  m_size: 65
   m_minRotSpeed: 5
   m_maxRotSpeed: 50

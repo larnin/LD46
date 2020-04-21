@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4adeabbb8584e4ca267a6cedc2aeee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxDistance: 90
-  m_deathDistance: 100
+  m_maxDistance: 50
+  m_deathDistance: 60
   m_maxBorderPower: 0.5
   m_maxCenterPower: 0.5
   m_maxBorderDistance: 96

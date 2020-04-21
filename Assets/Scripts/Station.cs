@@ -218,6 +218,8 @@ public class Station : MonoBehaviour
                 effect.effect.output.power += e.output.power;
                 effect.effect.output.resource += e.output.resource;
 
+                effect.effect.maxTimer *= 1 - e.maxTimer;
+
                 return;
             }
         }

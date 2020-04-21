@@ -67,5 +67,7 @@ public class CameraBehaviour : MonoBehaviour
 
         float z = transform.position.z;
         transform.position = new Vector3(m_target.x, m_target.y, z);
+
+        Event<CameraMovedEvent>.Broadcast(new CameraMovedEvent(e.x, e.y));
     }
 }
