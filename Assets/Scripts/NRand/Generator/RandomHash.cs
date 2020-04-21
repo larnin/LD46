@@ -37,11 +37,13 @@ namespace NRand
             return this;
         }
 
+        [ObsoleteAttribute("Don't use the float version, values are casted as int.", false)]
         public RandomHash Set(params float[] values)
         {
             m_value = Hash((ulong)m_seed);
             foreach (var v in values)
-                m_value = Hash(m_value * 37 + Cast.Reinterpret<float, ulong>(v));
+                //m_value = Hash(m_value * 37  Cast.Reinterpret<float, ulong>(v));
+                m_value = Hash(m_value * 37 + (ulong)v);
 
             return this;
         }

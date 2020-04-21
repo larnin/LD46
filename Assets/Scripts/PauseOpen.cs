@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PauseOpen : MonoBehaviour
 {
-    [SerializeField] GameObject m_pausePrefab;
+    [SerializeField] GameObject m_pausePrefab = null;
 
     GameObject m_pauseObj = null;
 
