@@ -7,10 +7,14 @@ public class ParralaxPlane : MonoBehaviour
 
     SubscriberList m_subscriberList = new SubscriberList();
 
+    Vector3 m_originalPos = Vector3.zero;
+
     private void Awake()
     {
         m_subscriberList.Add(new Event<CameraMovedEvent>.Subscriber(OnCameraMove));
         m_subscriberList.Subscribe();
+
+        m_originalPos = transform.position;
     }
 
     private void OnDestroy()
@@ -20,8 +24,6 @@ public class ParralaxPlane : MonoBehaviour
 
     void OnCameraMove(CameraMovedEvent e)
     {
-        float z = transform.position.z;
-
-        transform.position = new Vector3(e.x * m_moveSpeed, e.y * m_moveSpeed, z);
+        transform.position = new Vector3(e.x * m_moveSpeed, e.y * m_moveSpeed, 0) + m_originalPos;
     }
 }
