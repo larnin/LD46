@@ -13,6 +13,7 @@ public class DistanceChecker : MonoBehaviour
     [SerializeField] float m_minCenterDistance = 94;
     [SerializeField] float m_shakePower = 5;
     [SerializeField] float m_warningPulseTime = 2;
+    [SerializeField] AudioClip m_warningSound = null;
 
     List<Image> m_borderImages = new List<Image>();
     Image m_centerImage = null;
@@ -97,6 +98,9 @@ public class DistanceChecker : MonoBehaviour
         if (distanceNorm > 0)
         {
             float cycle = Time.time / m_warningPulseTime;
+            float oldCycle = (Time.time - Time.deltaTime) / m_warningPulseTime;
+            if (Mathf.FloorToInt(cycle) != Mathf.FloorToInt(oldCycle) && SoundSystem.instance != null)
+                SoundSystem.instance.PlaySound(m_warningSound, 0.5f);
             if (cycle - Mathf.Floor(cycle) < 0.5f)
                 warningColor.a = 1;
             else warningColor.a = 0;

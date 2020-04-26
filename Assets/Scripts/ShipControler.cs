@@ -11,6 +11,7 @@ public class ShipControler : MonoBehaviour
     [SerializeField] float m_acceleration = 10;
     [SerializeField] float m_deceleration = 2;
     [SerializeField] float m_rotationSpeed = 360;
+    [SerializeField] AudioClip m_movingLoop = null;
 
     Rigidbody2D m_rigidbody2D = null;
     Animator m_animator = null;
@@ -18,6 +19,8 @@ public class ShipControler : MonoBehaviour
     bool m_controleEnabled = true;
 
     SubscriberList m_subscriberList = new SubscriberList();
+
+    int m_movingLoopID = -1;
 
     static ShipControler m_instance = null;
     public static ShipControler instance { get { return m_instance; }}
@@ -41,6 +44,12 @@ public class ShipControler : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriberList.Unsubscribe();
+
+        if (SoundSystem.instance != null && m_movingLoopID >= 0)
+        {
+            SoundSystem.instance.StopLoop(m_movingLoopID, 0.2f);
+            m_movingLoopID = -1;
+        }
     }
 
     void FixedUpdate()
@@ -60,6 +69,20 @@ public class ShipControler : MonoBehaviour
         if (targetLenght > 1)
             targetLenght = 1;
         float targetAngle = targetLenght > 0 ? Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg : 0;
+
+        if(targetLenght >= m_treshold)
+        {
+            if (SoundSystem.instance != null && m_movingLoopID < 0)
+            {
+                SoundSystem.instance.StopLoop(m_movingLoopID, 0);
+                m_movingLoopID = SoundSystem.instance.PlayLoop(m_movingLoop, 0.08f, 0.2f);
+            }
+        }
+        else if(SoundSystem.instance != null && m_movingLoopID >= 0)
+        {
+            SoundSystem.instance.StopLoop(m_movingLoopID, 0.2f);
+            m_movingLoopID = -1;
+        }
         
         float newRotation = targetLenght > 0 ? UpdateRotation(moveAngle, targetAngle) : moveAngle;
         float newLenght = UpdateSpeed(moveLenght, targetLenght);

@@ -36,6 +36,11 @@ public class StationUI : MonoBehaviour
 
     [SerializeField] Color m_activeColor = Color.white;
     [SerializeField] Color m_disabledColor = Color.grey;
+    [SerializeField] AudioClip m_backSound = null;
+    [SerializeField] AudioClip m_clickSound = null;
+    [SerializeField] AudioClip m_upgradeSound = null;
+    [SerializeField] AudioClip m_rerollSound = null;
+    [SerializeField] AudioClip m_openSound = null;
 
     bool m_statusPageEnabled = true;
 
@@ -58,6 +63,9 @@ public class StationUI : MonoBehaviour
         UpdateInterface();
 
         Event<EnableControlesEvent>.Broadcast(new EnableControlesEvent(false));
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_openSound, 0.4f);
     }
 
     private void OnDestroy()
@@ -72,6 +80,8 @@ public class StationUI : MonoBehaviour
 
     public void Close()
     {
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_backSound, 0.3f);
         Destroy(gameObject);
     }
 
@@ -79,12 +89,16 @@ public class StationUI : MonoBehaviour
     {
         m_statusPageEnabled = true;
         UpdateInterface();
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_clickSound, 0.4f);
     }
 
     public void ClickUpgrade()
     {
         m_statusPageEnabled = false;
         UpdateInterface();
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_clickSound, 0.2f);
     }
 
     public void BuyUpgrade(int index)
@@ -105,6 +119,9 @@ public class StationUI : MonoBehaviour
         upgrades.GenerateUpgrades();
 
         UpdateInterface();
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_upgradeSound, 0.4f);
     }
 
     public void BuyReroll()
@@ -120,6 +137,9 @@ public class StationUI : MonoBehaviour
         upgrades.UseRegen();
 
         UpdateInterface();
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_rerollSound, 0.3f);
     }
 
     void InitData()

@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_music: {fileID: 8300000, guid: 3aef9c56680186243a61de3245e56d99, type: 3}
   m_gameScene: Game
+  m_startSound: {fileID: 8300000, guid: 2b638a90deeb08c48a17eb21e022803b, type: 3}
 --- !u!114 &111125241
 MonoBehaviour:
   m_ObjectHideFlags: 0

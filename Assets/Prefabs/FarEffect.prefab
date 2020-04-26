@@ -194,10 +194,11 @@ MonoBehaviour:
   m_deathDistance: 60
   m_maxBorderPower: 0.5
   m_maxCenterPower: 0.5
-  m_maxBorderDistance: 96
-  m_minCenterDistance: 94
+  m_maxBorderDistance: 56
+  m_minCenterDistance: 54
   m_shakePower: 5
   m_warningPulseTime: 2
+  m_warningSound: {fileID: 8300000, guid: 63d65fc945c60cf42ad31de889bb671e, type: 3}
 --- !u!1 &7702675281117373522
 GameObject:
   m_ObjectHideFlags: 0

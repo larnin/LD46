@@ -4910,6 +4910,7 @@ MonoBehaviour:
   m_acceleration: 10
   m_deceleration: 10
   m_rotationSpeed: 400
+  m_movingLoop: {fileID: 8300000, guid: 268bdb0e2bdf10a4e9bce2c65cbc65cd, type: 3}
 --- !u!50 &8272895202860421350
 Rigidbody2D:
   serializedVersion: 4
@@ -4956,6 +4957,9 @@ MonoBehaviour:
     type: 3}
   m_textPrefab: {fileID: 723252886541640296, guid: 643da8d9ae81fdf44a34143b98212ffe,
     type: 3}
+  m_laserLoop: {fileID: 8300000, guid: 3dc1766089c586740a18101de9917c8a, type: 3}
+  m_getResourceSound: {fileID: 8300000, guid: d14d272d59585b845a86e066c392bc1e, type: 3}
+  m_errorSound: {fileID: 8300000, guid: 5e0b1694935f5d749bd8938f6059e1b6, type: 3}
 --- !u!95 &3019681921031751394
 Animator:
   serializedVersion: 3

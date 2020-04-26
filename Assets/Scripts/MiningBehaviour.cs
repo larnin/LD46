@@ -15,6 +15,9 @@ public class MiningBehaviour : MonoBehaviour
     [SerializeField] int m_maxCargo = 5;
     [SerializeField] GameObject m_stationMenuPrefab = null;
     [SerializeField] GameObject m_textPrefab = null;
+    [SerializeField] AudioClip m_laserLoop = null;
+    [SerializeField] AudioClip m_getResourceSound = null;
+    [SerializeField] AudioClip m_errorSound = null;
 
     int m_cargo = 0;
     float m_miningTime = 0;
@@ -27,6 +30,8 @@ public class MiningBehaviour : MonoBehaviour
     SpriteRenderer m_laserImpact = null;
 
     bool m_controleEnabled = true;
+
+    int m_laserLoopID = -1;
 
     SubscriberList m_subscriberList = new SubscriberList();
 
@@ -51,6 +56,12 @@ public class MiningBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         m_subscriberList.Unsubscribe();
+
+        if (SoundSystem.instance != null && m_laserLoopID >= 0)
+        {
+            SoundSystem.instance.StopLoop(m_laserLoopID, 0.2f);
+            m_laserLoopID = -1;
+        }
     }
 
     void Update()
@@ -135,7 +146,7 @@ public class MiningBehaviour : MonoBehaviour
 
             if (m_clickedResource.HaveResource())
             {
-                if (m_cargo > m_maxCargo)
+                if (m_cargo >= m_maxCargo)
                 {
                     OnCargoFull();
                     OnMouseRelease();
@@ -154,6 +165,13 @@ public class MiningBehaviour : MonoBehaviour
         m_animator.SetBool("Laser", false);
 
         UpdateLaser(false);
+
+        if (SoundSystem.instance != null && m_laserLoopID >= 0)
+        {
+            SoundSystem.instance.StopLoop(m_laserLoopID, 0.1f);
+            m_laserLoopID = -1;
+        }
+             
     }
 
     void StartMining(ResourceItem asteroid)
@@ -169,6 +187,10 @@ public class MiningBehaviour : MonoBehaviour
             OnCargoFull();
             return;
         }
+
+        if (SoundSystem.instance != null && m_laserLoopID < 0)
+            m_laserLoopID = SoundSystem.instance.PlayLoop(m_laserLoop, 0.1f, 0.05f);
+
 
         m_animator.SetBool("Laser", true);
 
@@ -188,6 +210,9 @@ public class MiningBehaviour : MonoBehaviour
             text.color = new Color(120, 0, 0);
             text.text = "FULL CARGO";
         }
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_errorSound, 0.3f);
     }
 
     void OnClickTooFar()
@@ -200,6 +225,9 @@ public class MiningBehaviour : MonoBehaviour
             text.color = new Color(120, 0, 0);
             text.text = "TOO FAR";
         }
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_errorSound, 0.3f);
     }
 
     void OnResourceMined()
@@ -212,6 +240,9 @@ public class MiningBehaviour : MonoBehaviour
             text.color = Color.white;
             text.text = "+" + m_miningValue + Defs.resourceText;
         }
+
+        if (SoundSystem.instance != null)
+            SoundSystem.instance.PlaySound(m_getResourceSound, 0.3f);
     }
 
     void OnInteactStation()

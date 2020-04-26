@@ -6085,6 +6085,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_activeColor: {r: 1, g: 1, b: 1, a: 1}
   m_disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_backSound: {fileID: 8300000, guid: 8e4a2207ba6511049a096b0bb749bdf8, type: 3}
+  m_clickSound: {fileID: 8300000, guid: 2b638a90deeb08c48a17eb21e022803b, type: 3}
+  m_upgradeSound: {fileID: 8300000, guid: 397d079a607b9734da590e3b41abd9ab, type: 3}
+  m_rerollSound: {fileID: 8300000, guid: 31433d0348312e54a91163e93d538727, type: 3}
+  m_openSound: {fileID: 8300000, guid: d3f611462a102f54398159cf6be483ee, type: 3}
 --- !u!1 &6273616436245164071
 GameObject:
   m_ObjectHideFlags: 0
