@@ -2,9 +2,12 @@
 using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class SoundSystem : MonoBehaviour
 {
+    [SerializeField] AudioMixer m_mixer = null;
+
     class LoopData
     {
         public int id = -1;
@@ -27,6 +30,8 @@ public class SoundSystem : MonoBehaviour
     List<LoopData> m_loops = new List<LoopData>();
     int m_nextLoopID = 0;
 
+    SubscriberList m_subscriberList = new SubscriberList();
+
     private void Awake()
     {
         if (m_instance != null)
@@ -40,6 +45,19 @@ public class SoundSystem : MonoBehaviour
         m_sources = transform.Find("Sounds").GetComponentsInChildren<AudioSource>();
         m_musicSource1 = transform.Find("Music1").GetComponent<AudioSource>();
         m_musicSource2 = transform.Find("Music2").GetComponent<AudioSource>();
+        
+        m_subscriberList.Add(new Event<SettingsChangedEvent>.Subscriber(OnSettingsChanges));
+        m_subscriberList.Subscribe();
+    }
+
+    private void Start()
+    {
+        OnSettingsChanges(null);
+    }
+
+    private void OnDestroy()
+    {
+        m_subscriberList.Unsubscribe();
     }
 
     public void PlayMusic(AudioClip clip, float volume = 0.5f, float transitionTime = 1)
@@ -215,5 +233,17 @@ public class SoundSystem : MonoBehaviour
                 s.volume = volume * l.volume;
             }
         }
+    }
+
+    void OnSettingsChanges(SettingsChangedEvent e)
+    {
+        float music = Mathf.Log10(Settings.instance.musicVolume * 2) * 20;
+        if (Settings.instance.musicVolume < 0.01f)
+            music = -80;
+        float sound = Mathf.Log10(Settings.instance.soundVolume * 2) * 20;
+        if (Settings.instance.soundVolume < 0.01f)
+            sound = -80;
+        m_mixer.SetFloat("MusicVolume", music);
+        m_mixer.SetFloat("SoundVolume", sound);
     }
 }
